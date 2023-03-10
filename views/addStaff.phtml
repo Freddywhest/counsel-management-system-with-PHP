@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo Clients::$setting['siteName'] ? Clients::$setting['siteName'] : 'Add Staff';?></title>
+    <link rel="stylesheet" href="/views/assets/css/addstudents.css">
+    <link rel="stylesheet" href="/views/assets/css/nav.css">
+    <link rel="stylesheet" href="/views/assets/css/alert.css">
+</head>
+<body>
+  <?php
+ include_once $_SERVER['DOCUMENT_ROOT'].'/views/components/navbar.php'; 
+  ?>
+  <div class="alert-box red" data-staff="error"></div>
+<div id="section3">
+  <a id="contact" class="js--wp-3" name="contact"></a>
+    <div class="row">
+    	<div class="form-wrapper">
+    		<div class="form-inner-wrapper">
+
+                <br><h1>Add Staff</h1>
+               
+    		    <form id="contactForm" autocomplete="off">	
+    			<div class="field-list clear">
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Name </label>
+                            <input class="field-element"  data-staff = "name" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Gender </label>
+                            <input class="field-element"  data-staff = "gender" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Staff category </label>
+                            <input class="field-element" data-staff = "cat" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Department </label>
+                            <input class="field-element" data-staff = "department" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Position </label>
+                            <input class="field-element" data-staff = "pos" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any other position </label>
+                            <input class="field-element" data-staff = "otherpos" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Whatsapp contact </label>
+                            <input class="field-element" data-staff = "whatsapp" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any other contact </label>
+                            <input class="field-element" data-staff = "anycon" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Email </label>
+                            <input class="field-element" data-staff = "email" type="text" spellcheck="false">
+                        </div>
+    					
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any personal issue bothering you  </label>
+                            <textarea rows="10" class="field-element" data-staff = "personal" type="text" spellcheck="false"></textarea>
+                        </div>
+
+                        <div class="form-button-wrapper form-button-wrapper--align-center">
+					          <input class="button" type="submit" data-staff="submit" value="Submit">
+					   </div>
+
+    			</div>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+</div>
+<script src="/views/assets/js/alert.js"></script>
+<script src="/views/assets/js/addStaff.js"></script>
+</body>
+</html>

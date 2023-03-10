@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo Clients::$setting['siteName'] ? Clients::$setting['siteName'] : 'Edit Log';?></title>
+    <link rel="stylesheet" href="/views/assets/css/addstudents.css">
+    <link rel="stylesheet" href="/views/assets/css/nav.css">
+    <link rel="stylesheet" href="/views/assets/css/alert.css">
+</head>
+<body>
+  <?php
+ include_once $_SERVER['DOCUMENT_ROOT'].'/views/components/navbar.php'; 
+  ?>
+  <div class="alert-box red" data-student="error"></div>
+<div id="section3">
+  <a id="contact" class="js--wp-3" name="contact"></a>
+    <div class="row">
+    	<div class="form-wrapper">
+    		<div class="form-inner-wrapper">
+
+                <br><h1>Counsellor's Report </h1>
+                <br><h3><u>Counsellee details</u></h3><br />
+                <?php if(isset($_GET['etr3545-3656-32dsdf-32dsd-fdhg-323-sads-23-sddfds-a']) && $_GET['etr3545-3656-32dsdf-32dsd-fdhg-323-sads-23-sddfds-a'] === 'student'){?>
+                <p><b>Name: </b><?php echo Clients::$student['stName'];?></p><br>
+                <p><b>Student Id Number: </b><?php echo Clients::$student['stIdNumber'];?></p><br>
+                <p><b>Age: </b><?php
+                
+                $date1 = new DateTime(Clients::$student['stDob']);
+                $date2 = new DateTime("now");
+                $age = $date1->diff($date2);
+                echo $age->y;?></p><br>
+                <p><b>Gender: </b><?php echo Clients::$student['stGender'];?></p><br>
+                <p><b>Department: </b><?php echo Clients::$student['stDepartment'];?></p><br>
+                <p><b>Programme: </b><?php echo Clients::$student['stProgramme'];?></p><br>
+                <p><b>Level: </b><?php echo Clients::$student['stLevel'];?></p><br>
+                <p><b>Date of counsel: </b><?php echo Clients::$log['dateAndTime'];?></p><br>
+                <p><a href="/staff/<?php echo Clients::$student['id'];?>?etr3545-3656-32dsdf-32dsd-fdhg-323-sads-23-sddfds-a">View more details about <?php echo Clients::$student['stName'];?></a></p>
+
+                <?php }else if(isset($_GET['etr3545-3656-32dsdf-32dsd-fdhg-323-sads-23-sddfds-a']) && $_GET['etr3545-3656-32dsdf-32dsd-fdhg-323-sads-23-sddfds-a'] === 'staff'){?>
+                <p><b>Name: </b><?php echo Clients::$staff['sfName'];?></p><br>
+                <p><b>Gender: </b><?php echo Clients::$staff['sfGender'];?></p><br>
+                <p><b>Contact: </b><?php echo Clients::$staff['sfWhatsappNo'];?></p><br>
+                <p><b>Department: </b><?php echo Clients::$staff['sfDepartment'];?></p><br>
+                <p><b>Date of counsel: </b><?php echo Clients::$log['dateAndTime'];?></p><br>
+                <p><a href="/staff/<?php echo Clients::$staff['id'];?>?etr3545-3656-32dsdf-32dsd-fdhg-323-sads-23-sddfds-a">View more details about <?php echo Clients::$staff['sfName'];?></a></p>
+                <?php } ?>
+
+                <br><hr> <br>
+    		    <form id="contactForm" autocomplete="off">	
+    			<div class="field-list clear">
+
+                    <div id="name" class="form-item field ">
+                        <label class="title" for="name">Identified Issue </label>
+                        <textarea rows="10" class="field-element" data-student = "issue" type="text" spellcheck="false"><?php echo Clients::$log['issue'];?></textarea>
+                    </div>
+                    <div id="name" class="form-item field ">
+                        <label class="title" for="name">Goals Set  </label>
+                        <textarea rows="10" class="field-element" data-student = "goals" type="text" spellcheck="false"><?php echo Clients::$log['goal'];?></textarea>
+                    </div>
+                    <div id="name" class="form-item field ">
+                        <label class="title" for="name">Counselling Interventions (Therapeutic techniques and procedures)  </label>
+                        <textarea rows="10" class="field-element" data-student = "interven" type="text" spellcheck="false"><?php echo Clients::$log['intervention'];?></textarea>
+                    </div>
+                    <div id="name" class="form-item field ">
+                        <label class="title" for="name">Skills Employed</label>
+                        <textarea rows="10" class="field-element" data-student = "employed" type="text" spellcheck="false"><?php echo Clients::$log['skills'];?></textarea>
+                    </div>
+                    <div id="name" class="form-item field ">
+                        <label class="title" for="name">Comments, Evaluation and Closure </label>
+                        <textarea rows="10" class="field-element" data-student = "closure" type="text" spellcheck="false"><?php echo Clients::$log['evaluation'];?></textarea>
+                    </div>
+
+                    <div class="form-button-wrapper form-button-wrapper--align-center">
+                            <input class="button" type="submit" data-student="submit" value="Submit">
+                    </div>
+
+    			</div>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+</div>
+<script src="/views/assets/js/alert.js"></script>
+<script src="/views/assets/js/editLog.js"></script>
+</body>
+</html>

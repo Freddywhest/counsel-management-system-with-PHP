@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo Clients::$setting['siteName'] ? Clients::$setting['siteName'] : 'Students';?></title>
+    <link rel="stylesheet" href="/views/assets/dataTables/boxicons.min.css">
+    <link rel="stylesheet" href="/views/assets/dataTables/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="/views/assets/dataTables/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/views/assets/dataTables/bootstrap.min.css">
+    <link rel="stylesheet" href="/views/assets/css/students.css">
+    <link rel="stylesheet" href="/views/assets/css/nav.css">
+    
+ 
+</head>
+<body>
+  <?php include_once $_SERVER['DOCUMENT_ROOT'].'/views/components/navbar.php'; ?>
+<div class="container">
+  <br><a href="/add-student" class="btn btn-success">Add student</a>
+  <div class="row py-5">
+    <div class="col-12">
+      <table id="example" class="table table-hover responsive nowrap" style="width:100%">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Phone Number</th>
+            <th>Programme</th>
+            <th>Department</th>
+            <th>Date of birth</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php Clients::getAllStudents();
+              foreach(Clients::$allStudents as $student){?>
+          <tr>
+            <td>
+              <a href="/student/<?php echo $student['id']; ?>">
+                <div class="d-flex align-items-center">
+                  <div class="avatar avatar-blue mr-3"></div>
+
+                  <div class="">
+                    <p class="font-weight-bold mb-0"><?php echo $student['stName']; ?></p>
+                    <p class="text-muted mb-0"><b>Student Id: </b><?php echo $student['stIdNumber']; ?></p>
+                  </div>
+                </div>
+              </a>
+            </td>
+            <td><?php echo $student['stWhatsappNo']; ?></td>
+            <td><?php echo $student['stProgramme']; ?></td>
+            <td><?php echo $student['stDepartment']; ?></td>
+            <td>
+            <?php echo $student['stDob']; ?>
+            </td>
+            <td>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="20.88px" viewBox="0 0 29.957 122.88" enable-background="new 0 0 29.957 122.88" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M14.978,0c8.27,0,14.979,6.708,14.979,14.979c0,8.27-6.709,14.976-14.979,14.976 C6.708,29.954,0,23.249,0,14.979C0,6.708,6.708,0,14.978,0L14.978,0z M14.978,92.926c8.27,0,14.979,6.708,14.979,14.979 s-6.709,14.976-14.979,14.976C6.708,122.88,0,116.175,0,107.904S6.708,92.926,14.978,92.926L14.978,92.926z M14.978,46.463 c8.27,0,14.979,6.708,14.979,14.979s-6.709,14.978-14.979,14.978C6.708,76.419,0,69.712,0,61.441S6.708,46.463,14.978,46.463 L14.978,46.463z"></path></g></svg>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <a class="dropdown-item" href="/student/<?php echo $student['id']; ?>?etr3545-3656-32dsdf-32dsd-fdhg-323-sads-23-sddfds-a"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="10px" height="20.88px" viewBox="0 0 122.88 121.51"><title>edit</title><path d="M28.66,1.64H58.88L44.46,16.71H28.66a13.52,13.52,0,0,0-9.59,4l0,0a13.52,13.52,0,0,0-4,9.59v76.14H91.21a13.5,13.5,0,0,0,9.59-4l0,0a13.5,13.5,0,0,0,4-9.59V77.3l15.07-15.74V92.85a28.6,28.6,0,0,1-8.41,20.22l0,.05a28.58,28.58,0,0,1-20.2,8.39H11.5a11.47,11.47,0,0,1-8.1-3.37l0,0A11.52,11.52,0,0,1,0,110V30.3A28.58,28.58,0,0,1,8.41,10.09L8.46,10a28.58,28.58,0,0,1,20.2-8.4ZM73,76.47l-29.42,6,4.25-31.31L73,76.47ZM57.13,41.68,96.3.91A2.74,2.74,0,0,1,99.69.38l22.48,21.76a2.39,2.39,0,0,1-.19,3.57L82.28,67,57.13,41.68Z"/></svg> View & Edit Profile</a>
+                  <a class="dropdown-item " href="/counsel/<?php echo $student['id']; ?>?etr3545-3656-32dsdf-32dsd-fdhg-323-sads-23-sddfds-a=student""> Counsel</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <?php } ?>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="/views/assets/dataTables/jquery.js"></script>
+<script src="/views/assets/dataTables/popper.js"></script>
+<script src="/views/assets/dataTables/bootstrap.min.js"></script>
+<script src="/views/assets/dataTables/jquery.dataTables.min.js"></script>
+<script src="/views/assets/dataTables/dataTables.responsive.min.js"></script>
+<script src="/views/assets/dataTables/dataTables.bootstrap4.min.js"></script>
+<script src="/views/assets/js/datatable.js"></script>
+</body>
+</html>

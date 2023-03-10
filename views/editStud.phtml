@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo Clients::$setting['siteName'] ? Clients::$setting['siteName'] : 'Edit Student';?></title>
+    <link rel="stylesheet" href="/views/assets/css/addstudents.css">
+    <link rel="stylesheet" href="/views/assets/css/nav.css">
+    <link rel="stylesheet" href="/views/assets/css/alert.css">
+</head>
+<body>
+  <?php
+ include_once $_SERVER['DOCUMENT_ROOT'].'/views/components/navbar.php'; 
+  ?>
+  <div class="alert-box red" data-student="error"></div>
+<div id="section3">
+  <a id="contact" class="js--wp-3" name="contact"></a>
+    <div class="row">
+    	<div class="form-wrapper">
+    		<div class="form-inner-wrapper">
+
+                <br><h1>Edit Student: <small><b><?php echo Clients::$student['stName'];?></b></small></h1>
+                <p><b>Age: </b><?php
+                
+                $date1 = new DateTime(Clients::$student['stDob']);
+                $date2 = new DateTime("now");
+                $age = $date1->diff($date2);
+                echo $age->y;?></p>
+                <br><hr> <br>
+    		    <form id="contactForm" autocomplete="off">	
+    			<div class="field-list clear">
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Name </label>
+                            <input class="field-element" value="<?php echo Clients::$student['stName'];?>" data-student = "name" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">ID Number </label>
+                            <input class="field-element" value="<?php echo Clients::$student['stIdNumber'];?>" data-student = "id-number"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Department </label>
+                            <input class="field-element" data-student = "department" value="<?php echo Clients::$student['stDepartment'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Programme </label>
+                            <input class="field-element" data-student = "programme" value="<?php echo Clients::$student['stProgramme'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Year/Level </label>
+                            <input class="field-element" data-student = "year" value="<?php echo Clients::$student['stLevel'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Hall </label>
+                            <input class="field-element" data-student = "hall" value="<?php echo Clients::$student['stHall'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Room Number </label>
+                            <input class="field-element" data-student = "room" value="<?php echo Clients::$student['stRoomNo'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Whatsapp contact </label>
+                            <input class="field-element" data-student = "whatsapp" value="<?php echo Clients::$student['stWhatsappNo'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any other contact </label>
+                            <input class="field-element" data-student = "other-contact" value="<?php echo Clients::$student['stOtherNo'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Email </label>
+                            <input class="field-element" data-student = "email" value="<?php echo Clients::$student['stEmail'];?>" type="text" spellcheck="false">
+                        </div>
+
+                        <br><h3>Autobiography</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Date of Birth </label>
+                            <input class="field-element" data-student = "dob" value="<?php echo Clients::$student['stDob'];?>" type="date" id="start"  spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Number of siblings </label>
+                            <input class="field-element" data-student = "siblings" value="<?php echo Clients::$student['stSiblings'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Position of birth (eg. 1st, 2nd, only child)  </label>
+                            <input class="field-element" data-student = "pob" value="<?php echo Clients::$student['stBirthPosition'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Gender </label>
+                            <input class="field-element" data-student = "gender" value="<?php echo Clients::$student['stGender'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Religion </label>
+                            <input class="field-element" data-student = "religion" value="<?php echo Clients::$student['stReligion'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Number of children/ Dependents </label>
+                            <input class="field-element" data-student = "noc" value="<?php echo Clients::$student['stDependents'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">What is your intimate relationship like </label>
+                            <input class="field-element" data-student = "relationship" value="<?php echo Clients::$student['stMaritalStatus'];?>" type="text" spellcheck="false">
+                        </div>
+
+                        <br><h3>Family Data</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Parents/Guardian's occupation </label>
+                            <input class="field-element" data-student = "g-occup"  value="<?php echo Clients::$student['stGuardianOccupation'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Contact of Parent/Guardian </label>
+                            <input class="field-element" data-student = "g-contact"  value="<?php echo Clients::$student['stGuardianContact'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Academic Level achieved </label>
+                            <input class="field-element" data-student = "level-ach"  value="<?php echo Clients::$student['gdAcademicAchieved'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Married/Divorced/Separated/Deceased </label>
+                            <input class="field-element" data-student = "married"  value="<?php echo Clients::$student['gdMaritalStatus'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any other issue </label>
+                            <textarea rows="10" class="field-element" data-student = "aoi1" type="text" spellcheck="false"><?php echo Clients::$student['anyIssue'];?></textarea>
+                        </div>
+
+                            <br><h3>Achievements in life</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Academic </label>
+                            <input class="field-element" data-student = "a-academic" value="<?php echo Clients::$student['gdAcademic'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Social </label>
+                            <input class="field-element" data-student = "a-social" value="<?php echo Clients::$student['gdSocial'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Political </label>
+                            <input class="field-element" data-student = "a-political" value="<?php echo Clients::$student['gdPolitical'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any Other </label>
+                            <textarea rows="10" class="field-element" data-student = "a-other" type="text" spellcheck="false"><?php echo Clients::$student['anyOther'];?></textarea>
+                        </div>
+
+                        <br><h3>Failures /Disappointments in life</h3><br />
+
+                        <div id="name" class="form-item field ">
+                            <label class="title" for="name">Academic </label>
+                            <input class="field-element" data-student = "f-academic" value="<?php echo Clients::$student['gdFAcademic'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Social </label>
+                            <input class="field-element" data-student = "f-social" value="<?php echo Clients::$student['gdFSocial'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Political </label>
+                            <input class="field-element" data-student = "f-political" value="<?php echo Clients::$student['gdFPolitical'];?>" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any Other </label>
+                            <textarea rows="10" class="field-element" data-student = "f-other" type="text" spellcheck="false"><?php echo Clients::$student['fAnyOther'];?></textarea>
+                        </div>
+
+
+
+                        <br><h3>Your responsibilities</h3><br />
+                        <div id="name" class="form-item field ">
+                            <label class="title" for="name">Number of children in school </label>
+                            <input class="field-element" data-student = "cis" value="<?php echo Clients::$student['ChildrenInSch'];?>" type="text" spellcheck="false">
+                        </div>
+
+                        <div id="name" class="form-item field ">
+                            <label class="title" for="name">Caring for aged parents </label>
+                            <input class="field-element" data-student = "cap" value="<?php echo Clients::$student['caringParent'];?>" type="text" spellcheck="false">
+                        </div>
+
+                        <div id="name" class="form-item field ">
+                            <label class="title" for="name">Caring for younger siblings </label>
+                            <input class="field-element" data-student = "cys" value="<?php echo Clients::$student['caringSiblings'];?>" type="text" spellcheck="false">
+                        </div>
+
+                        <br><h3>Your interest</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Likes </label>
+                            <textarea rows="10" class="field-element" data-student = "likes" type="text" spellcheck="false"><?php echo Clients::$student['likes'];?></textarea>
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Dislikes </label>
+                            <textarea rows="10" class="field-element" data-student = "dislikes" type="text" spellcheck="false"><?php echo Clients::$student['dislikes'];?></textarea>
+                        </div>
+                        
+
+                        <br><h3>Your Aspirations/Ambitions/Wishes</h3><br />
+
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Your Aspirations/Ambitions/Wishes </label>
+                            <textarea rows="10" class="field-element" data-student = "ambitions" type="text" spellcheck="false"><?php echo Clients::$student['aspirations'];?></textarea>
+                        </div>
+                        
+
+                        <br><h3>Description of yourself/Personality (eg. Quiet, easily make friends, easily angered etc.)</h3><br />
+
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Strengths </label>
+                            <textarea rows="10" class="field-element" data-student = "strengths" type="text" spellcheck="false"><?php echo Clients::$student['strengths'];?></textarea>
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Weaknesses </label>
+                            <textarea rows="10" class="field-element" data-student = "weaknesses" type="text" spellcheck="false"><?php echo Clients::$student['weakness'];?></textarea>
+                        </div>
+                        
+
+                        <br><h3>Others</h3><br />
+
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Your state of health i.e., any major ailment/chronic ailment or sickness </label>
+                            <textarea rows="10" class="field-element" data-student = "health" type="text" spellcheck="false"><?php echo Clients::$student['healthState'];?></textarea>
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Have you ever had any thought of suicide / attempted suicide? </label>
+                            <textarea rows="10" class="field-element" data-student = "suicide" type="text" spellcheck="false"><?php echo Clients::$student['suicide'];?></textarea>
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Contact of close relative </label>
+                            <input class="field-element" data-student = "relative" value="<?php echo Clients::$student['contactRelative'];?>" type="text" spellcheck="false">
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Contact of close friend on campus </label>
+                            <input class="field-element" data-student = "friend" value="<?php echo Clients::$student['contactFriend'];?>" type="text" spellcheck="false">
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Contact of bosom roommate </label>
+                            <input class="field-element" data-student = "roommate" value="<?php echo Clients::$student['contactRoomMate'];?>" type="text" spellcheck="false">
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Other personal issues bothering you </label>
+                            <textarea rows="10" class="field-element" data-student = "bothering" type="text" spellcheck="false"><?php echo Clients::$student['personalIssues'];?></textarea>
+                        </div>
+
+                        <br><h3>GROUP COUNSELLING / PSYCHOEDUCATIONAL GROUP ACTIVITIES</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">ACTIVITY </label>
+                            <textarea rows="10" class="field-element" data-student = "ACTIVITY" type="text" spellcheck="false"><?php echo Clients::$student['groupCounselling'];?></textarea>
+                        </div>
+                        <div id="contactResponse"></div>
+                        <div class="form-button-wrapper form-button-wrapper--align-center">
+					          <input class="button" type="submit" data-student="submit" value="Update">
+					   </div>
+
+    			</div>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+</div>
+<script src="/views/assets/js/alert.js"></script>
+<script src="/views/assets/js/editStud.js"></script>
+</body>
+</html>

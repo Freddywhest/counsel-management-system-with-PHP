@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo Clients::$setting['siteName'] ? Clients::$setting['siteName'] : 'Dashboard';?></title>
+    <link rel="stylesheet" href="/views/assets/dataTables/bootstrap.min.css">
+    <link rel="stylesheet" href="/views/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/views/assets/css/nav.css">
+    
+ 
+</head>
+<body>
+  <?php include_once $_SERVER['DOCUMENT_ROOT'].'/views/components/navbar.php'; ?>
+  <div class="wrap">
+   <div class="search">
+    <a href="/students" class="btn btn-success">Counsel student</a>
+    <a href="/staffs" style="margin-left: 30%;" class="btn btn-primary">Counsel staff</a>
+   </div>
+</div>
+</body>
+</html>

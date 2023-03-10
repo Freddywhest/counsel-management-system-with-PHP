@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo Clients::$setting['siteName'] ? Clients::$setting['siteName'] : 'Add Student';?></title>
+    <link rel="stylesheet" href="/views/assets/css/addstudents.css">
+    <link rel="stylesheet" href="/views/assets/css/nav.css">
+    <link rel="stylesheet" href="/views/assets/css/alert.css">
+</head>
+<body>
+  <?php include_once $_SERVER['DOCUMENT_ROOT'].'/views/components/navbar.php'; ?>
+  <div class="alert-box red" data-student="error"></div>
+<div id="section3">
+    <a id="contact" class="js--wp-3" name="contact"></a>
+    <div class="row">
+        <div class="form-wrapper">
+            <div class="form-inner-wrapper">
+
+                <br><h1>Add Student</h1>
+    		    <form id="contactForm" autocomplete="off">	
+    			<div class="field-list clear">
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Name </label>
+                            <input class="field-element" data-student = "name" type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">ID Number </label>
+                            <input class="field-element" data-student = "id-number"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Department </label>
+                            <input class="field-element" data-student = "department"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Programme </label>
+                            <input class="field-element" data-student = "programme"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Year/Level </label>
+                            <input class="field-element" data-student = "year"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Hall </label>
+                            <input class="field-element" data-student = "hall"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Room Number </label>
+                            <input class="field-element" data-student = "room"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Whatsapp contact </label>
+                            <input class="field-element" data-student = "whatsapp"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any other contact </label>
+                            <input class="field-element" data-student = "other-contact"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Email </label>
+                            <input class="field-element" data-student = "email"  type="text" spellcheck="false">
+                        </div>
+
+                        <br><h3>Autobiography</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Date of Birth </label>
+                            <input class="field-element" data-student = "dob"  type="date" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Number of siblings </label>
+                            <input class="field-element" data-student = "siblings"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Position of birth (eg. 1st, 2nd, only child)  </label>
+                            <input class="field-element" data-student = "pob"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Gender </label>
+                            <input class="field-element" data-student = "gender"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Religion </label>
+                            <input class="field-element" data-student = "religion"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Number of children/ Dependents </label>
+                            <input class="field-element" data-student = "noc"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">What is your intimate relationship like </label>
+                            <input class="field-element" data-student = "relationship"  type="text" spellcheck="false">
+                        </div>
+
+                        <br><h3>Family Data</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Parents/Guardian's occupation </label>
+                            <input class="field-element" data-student = "g-occup"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Contact of Parent/Guardian </label>
+                            <input class="field-element" data-student = "g-contact"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Academic Level achieved </label>
+                            <input class="field-element" data-student = "level-ach"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Married/Divorced/Separated/Deceased </label>
+                            <input class="field-element" data-student = "married"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any other issue </label>
+                            <textarea rows="10" class="field-element" data-student = "aoi1"  type="text" spellcheck="false"></textarea>
+                        </div>
+
+                            <br><h3>Achievements in life</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Academic </label>
+                            <input class="field-element" data-student = "a-academic"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Social </label>
+                            <input class="field-element" data-student = "a-social"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Political </label>
+                            <input class="field-element" data-student = "a-political"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any Other </label>
+                            <textarea rows="10" class="field-element" data-student = "a-other"  type="text" spellcheck="false"></textarea>
+                        </div>
+
+                        <br><h3>Failures /Disappointments in life</h3><br />
+
+                        <div id="name" class="form-item field ">
+                            <label class="title" for="name">Academic </label>
+                            <input class="field-element" data-student = "f-academic"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Social </label>
+                            <input class="field-element" data-student = "f-social"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Political </label>
+                            <input class="field-element" data-student = "f-political"  type="text" spellcheck="false">
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Any Other </label>
+                            <textarea rows="10" class="field-element" data-student = "f-other"  type="text" spellcheck="false"></textarea>
+                        </div>
+
+
+
+                        <br><h3>Your responsibilities</h3><br />
+                        <div id="name" class="form-item field ">
+                            <label class="title" for="name">Number of children in school </label>
+                            <input class="field-element" data-student = "cis"  type="text" spellcheck="false">
+                        </div>
+
+                        <div id="name" class="form-item field ">
+                            <label class="title" for="name">Caring for aged parents </label>
+                            <input class="field-element" data-student = "cap"  type="text" spellcheck="false">
+                        </div>
+
+                        <div id="name" class="form-item field ">
+                            <label class="title" for="name">Caring for younger siblings </label>
+                            <input class="field-element" data-student = "cys"  type="text" spellcheck="false">
+                        </div>
+
+                        <br><h3>Your interest</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Likes </label>
+                            <textarea rows="10" class="field-element" data-student = "likes"  type="text" spellcheck="false"></textarea>
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Dislikes </label>
+                            <textarea rows="10" class="field-element" data-student = "dislikes"  type="text" spellcheck="false"></textarea>
+                        </div>
+                        
+
+                        <br><h3>Your Aspirations/Ambitions/Wishes</h3><br />
+
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Your Aspirations/Ambitions/Wishes </label>
+                            <textarea rows="10" class="field-element" data-student = "ambitions"  type="text" spellcheck="false"></textarea>
+                        </div>
+                        
+
+                        <br><h3>Description of yourself/Personality (eg. Quiet, easily make friends, easily angered etc.)</h3><br />
+
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Strengths </label>
+                            <textarea rows="10" class="field-element" data-student = "strengths"  type="text" spellcheck="false"></textarea>
+                        </div>
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Weaknesses </label>
+                            <textarea rows="10" class="field-element" data-student = "weaknesses"  type="text" spellcheck="false"></textarea>
+                        </div>
+                        
+
+                        <br><h3>Others</h3><br />
+
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Your state of health i.e., any major ailment/chronic ailment or sickness </label>
+                            <textarea rows="10" class="field-element" data-student = "health"  type="text" spellcheck="false"></textarea>
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Have you ever had any thought of suicide / attempted suicide? </label>
+                            <textarea rows="10" class="field-element" data-student = "suicide"  type="text" spellcheck="false"></textarea>
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Contact of close relative </label>
+                            <input class="field-element" data-student = "relative"  type="text" spellcheck="false">
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Contact of close friend on campus </label>
+                            <input class="field-element" data-student = "friend"  type="text" spellcheck="false">
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Contact of bosom roommate </label>
+                            <input class="field-element" data-student = "roommate"  type="text" spellcheck="false">
+                        </div>
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">Other personal issues bothering you </label>
+                            <textarea rows="10" class="field-element" data-student = "bothering"  type="text" spellcheck="false"></textarea>
+                        </div>
+
+                        <br><h3>GROUP COUNSELLING / PSYCHOEDUCATIONAL GROUP ACTIVITIES</h3><br />
+
+    					<div id="name" class="form-item field ">
+                            <label class="title" for="name">ACTIVITY </label>
+                            <textarea rows="10" class="field-element" data-student = "ACTIVITY"  type="text" spellcheck="false"></textarea>
+                        </div>
+                        <div id="contactResponse"></div>
+                        <div class="form-button-wrapper form-button-wrapper--align-center">
+					          <input class="button" type="submit" data-student="submit" value="Submit">
+					   </div>
+
+    			</div>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+</div>
+<script src="/views/assets/js/alert.js"></script>
+<script src="/views/assets/js/student.js"></script>
+</body>
+</html>
